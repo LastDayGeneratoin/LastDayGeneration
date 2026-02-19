@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio | LAHATRINIAVO</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+    color:white;
+}style>
+.btn-retour{
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+
+
+/* HEADER */
+header{
+    position:fixed;
+    width:100%;
+    top:0;
+    left:0;
+    padding:15px 60px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    backdrop-filter:blur(15px);
+    background:rgba(0,0,0,0.4);
+    z-index:1000;
+}
+
+.logo{
+    font-size:22px;
+    font-weight:700;
+    letter-spacing:1px;
+}
+
+/* NAV */
+nav{
+    display:flex;
+}
+
+nav a{
+    text-decoration:none;
+    color:white;
+    margin-left:30px;
+    position:relative;
+    transition:0.3s;
+}
+
+nav a::after{
+    content:"";
+    width:0%;
+    height:2px;
+    background:#00f2fe;
+    position:absolute;
+    left:0;
+    bottom:-6px;
+    transition:0.3s;
+}
+
+nav a:hover::after{
+    width:100%;
+}
+
+/* HAMBURGER */
+.menu-btn{
+    display:none;
+    flex-direction:column;
+    cursor:pointer;
+}
+
+.menu-btn span{
+    width:25px;
+    height:3px;
+    background:white;
+    margin:4px;
+    transition:0.4s;
+}
+
+/* SECTIONS */
+section{
+    padding:130px 60px;
+    min-height:100vh;
+    animation:fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn{
+    from{opacity:0; transform:translateY(30px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+.home{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+.home-text{
+    max-width:500px;
+}
+
+.home-text h1{
+    font-size:45px;
+    margin-bottom:15px;
+}
+
+.home-text span{
+    color:#00f2fe;
+}
+
+.home-text p{
+    margin-bottom:25px;
+    line-height:1.6;
+}
+
+/* BUTTON */
+.btn{
+    padding:12px 30px;
+    background:#00f2fe;
+    border:none;
+    border-radius:30px;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:white;
+    transform:scale(1.05);
+}
+
+/* PROFILE IMAGE */
+.profile img{
+    width:270px;
+    border-radius:50%;
+    border:5px solid #00f2fe;
+    box-shadow:0 0 40px rgba(0,242,254,0.7);
+    transition:0.4s;
+}
+
+.profile img:hover{
+    transform:scale(1.05);
+}
+
+/* CARD */
+.card{
+    background:rgba(255,255,255,0.1);
+    padding:30px;
+    border-radius:20px;
+    backdrop-filter:blur(20px);
+    margin-top:25px;
+    transition:0.4s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+/* SOCIAL */
+.social{
+    margin-top:20px;
+}
+
+.social a{
+    display:inline-block;
+    margin-right:15px;
+    font-size:20px;
+    color:#00f2fe;
+    transition:0.3s;
+}
+
+.social a:hover{
+    transform:scale(1.2);
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:20px;
+    background:rgba(0,0,0,0.6);
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+
+    nav{
+        position:absolute;
+        top:70px;
+        right:-100%;
+        flex-direction:column;
+        background:rgba(0,0,0,0.95);
+        width:220px;
+        padding:25px;
+        transition:0.4s;
+        border-radius:10px;
+    }
+
+    nav.active{
+        right:20px;
+    }
+
+    nav a{
+        margin:15px 0;
+    }
+
+    .menu-btn{
+        display:flex;
+    }
+
+    .home{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .profile{
+        margin-top:40px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+   
+    <div class="logo">LAHATRINIAVO</div>
+
+    <nav id="nav">
+        <a href="#home">Accueil</a>
+        <a href="#about">À propos</a>
+        <a href="#notes">Notes</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <div class="menu-btn" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</header>
+<a href="index.html">
+  <button>Retour</button>
+</a>
+    
+</div>
+
+<section id="home" class="home">
+    <div class="home-text">
+        <h1>Bonjour et soyez le bienvenu sur mon site, je suis <span>LAHATRINIAVO Fitiavana Irinà</span></h1>
+        <p>Futur Développeur Web passionné par la création de sites modernes et interactifs avec un design premium.</p>
+        <button class="btn">Me contacter</button>
+
+        <div class="social">
+            <a href="#">🌐</a>
+            <a href="#">💼</a>
+            <a href="#">📱</a>
+            <a href="#">🫡</a>
+        </div>
+    </div>
+
+    <div class="profile">
+        <img src="lahatra.png" alt="Photo de profil">
+    </div>
+</section>
+
+<section id="about">
+    <h2>À propos</h2>
+    <div class="card">
+        <p>Je suis Lahatriniavo, étudiant en informatique animé par une ambition claire : devenir un développeur professionnel d’exception.
+Spécialisé en HTML et CSS, je conçois des sites web modernes, structurés et élégants. Chaque ligne de code que j’écris est une opportunité de progresser, d’innover et de me rapprocher de mon objectif.
+Déterminé, discipliné et passionné, je ne me contente pas d’apprendre — je m’engage à maîtriser mon domaine. Je crois que le travail constant, la curiosité et le courage sont les clés de la réussite dans le monde du développement.<br />
+🎯 Mon objectif est de bâtir des projets web performants, professionnels et impactants, capables de faire la différence.</p>
+        <p>Développeur spécialisé en HTML & CSS. 
+        Mon objectif est de devenir développeur web et créer des projets innovants et professionnels.</p>
+    </div>
+</section>
+
+<section id="notes">
+    <h2>Notes Personnelles</h2>
+    <div class="card">
+        <ul>
+            <li>Mon nom propre est LAHATRINIAVO FITIAVANA IRINA</li>
+            <li>Né le 11 Octobre 2007</li>
+            <li>Adresse exacte:Andrainjato Fianarantsoa</li>
+            <li>Bachelier de 2025-present </li>
+            <li>Titulaire baccalauréat serie scientifique D</li>
+          
+            <li>peut augmenter ma compétences à l'aide d'apprentissage</li>
+            <li>Peut Travailler dans une entreprise tech</li>
+            <li>En dehors du code, j’aime :
+Explorer les nouvelles technologies
+Regarder des contenus éducatifs sur le digital
+Écouter de la musique pour stimuler ma créativité
+Découvrir des designs inspirants
+Ces loisirs nourrissent mon imagination et m’aident à rester motivé dans mon parcours vers mon objectif : devenir un développeur professionnel compétent et innovant.</li>
+        </ul>
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Contact</h2>
+    <div class="contact-box">
+    <p>
+        <i class="fa-solid fa-envelope"></i>
+        <a href="mailto:lahatriniavoirinah@gmail.com">
+            lahatriniavoirinah@gmail.com
+        </a>
+    </p>
+
+    <p>
+        <i class="fa-brands fa-facebook"></i>
+        <a href="https://www.facebook.com/profile.php?id=100087383293478" target="_blank">
+            Facebook Profile
+        </a>
+    </p>
+
+    <p>
+        <i class="fa-solid fa-phone"></i>
+        <a href="tel:+261385605343">
+            +261 38 56 053 43
+        </a>
+    </p>
+</div>
+</section>
+
+<footer>
+    © 2026 - Portfolio Lahatriniavo
+</footer>
+
+<script>
+function toggleMenu(){
+    document.getElementById("nav").classList.toggle("active");
+}
+</script>
+
+</body>
+</html>
