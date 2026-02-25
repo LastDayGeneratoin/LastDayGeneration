@@ -7,7 +7,7 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+S1
 <style>
 *{
     margin:0;
@@ -17,7 +17,7 @@
 }
 
 html{
-    scroll-behavior:smooth;
+    scroll-behavior:smooth;b
 }
 
 body{
@@ -32,7 +32,25 @@ body{
   border-radius: 8px;
   cursor: pointer;
 }
+.btn-retour{
+    position:fixed;
+    top:90px;
+    left:30px;
+    padding:10px 20px;
+    background:#00f2fe;
+    color:white;
+    text-decoration:none;
+    border-radius:25px;
+    font-weight:600;
+    transition:0.3s;
+    z-index:1000;
+}
 
+.btn-retour:hover{
+    background:white;
+    color:#0f2027;
+    transform:scale(1.05);
+}
 
 
 /* HEADER */
@@ -255,13 +273,18 @@ footer{
         <a href="#notes">Notes</a>
         <a href="#contact">Contact</a>
     </nav>
+    
     <div class="menu-btn" onclick="toggleMenu()">
         <span></span>
         <span></span>
         <span></span>
     </div>
 </header>
-<a href="index.html">
+
+<.......boton retour.....></.......boton>
+<a href="index.html" class="btn-retour">
+   <i class="fa-solid fa-arrow-left"></i> Retour
+</a>
   <button>Retour</button>
 </a>
     
