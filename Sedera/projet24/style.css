@@ -1,0 +1,396 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background: #f5f7fa;
+  color: #333;
+  padding-top: 80px; /* espace navbar fixed */
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #1e2a38;
+  padding: 15px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+
+.logo img {
+  height: 45px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links li a {
+  position: relative;
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  padding: 5px 0;
+  transition: color 0.3s ease;
+}
+
+/* Animation hover */
+.nav-links li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: darkgoldenrod;
+  transition: width 0.3s ease;
+}
+
+.nav-links li a:hover::after,
+.nav-links li.active a::after {
+  width: 100%;
+}
+
+.nav-links li a:hover {
+  color: darkgoldenrod;
+}
+
+/* ================= SECTIONS ================= */
+
+.section {
+  width: 100%;
+  padding: 100px 20px;
+  text-align: center;
+}
+
+/* ACCUEIL */
+#Accueil {
+  background: linear-gradient(135deg, #1e2a38, #2f3e52);
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#Accueil h1 {
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+#Accueil h2 {
+  font-weight: normal;
+  font-size: 20px;
+}
+/* Bouton accueil */
+.btn-accueil {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 12px 30px;
+  background: darkgoldenrod;
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 30px;
+  transition: 0.3s ease;
+}
+
+.btn-accueil:hover {
+  background: white;
+  color: #1e2a38;
+  transform: scale(1.05);
+}
+
+/* ================= SERVICES ================= */
+
+.service-section {
+  background: #ffffff;
+}
+
+.service-title {
+  font-size: 36px;
+  color: #1e2a38;
+  margin-bottom: 50px;
+}
+
+.service-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.service-card {
+  background: #1e2a38;
+  color: white;
+  width: 300px;
+  padding: 30px 20px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+}
+
+.service-card h2 {
+  color: darkgoldenrod;
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+.service-card p {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* Responsive services */
+@media (max-width: 768px) {
+  .service-card {
+    width: 90%;
+  }
+}
+
+/* ================= MEMBRES ================= */
+
+.container {
+  padding: 80px 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  background: #f5f7fa;
+}
+
+.card {
+  background: #1e2a38;
+  width: 250px;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.card h2 {
+  margin-top: 15px;
+}
+
+.card h2 a {
+  color: darkgoldenrod;
+  text-decoration: none;
+}
+
+.card p {
+  color: white;
+  margin-top: 5px;
+}
+
+/* ================= CONTACT ================= */
+
+.contact-section {
+  background: #1e2a38;
+  color: white;
+}
+
+.contact-title {
+  font-size: 36px;
+  color: darkgoldenrod;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+/* Conteneur principal */
+.contact-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* Boîte infos */
+.contact-info-box {
+  background: #25364a;
+  padding: 40px;
+  border-radius: 15px;
+  width: 400px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.contact-info-box h2 {
+  color: darkgoldenrod;
+  margin-bottom: 15px;
+}
+
+.contact-info-box p {
+  margin-bottom: 10px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Boîte formulaire */
+.contact-form-box {
+  background: #25364a;
+  padding: 40px;
+  border-radius: 15px;
+  width: 400px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.contact-form-box h2 {
+  color: darkgoldenrod;
+  margin-bottom: 20px;
+}
+
+/* Formulaire */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #ddd;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  font-size: 15px;
+  outline: none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: 2px solid darkgoldenrod;
+}
+
+/* Bouton */
+.btn-submit {
+  margin-top: 10px;
+  padding: 12px;
+  background: darkgoldenrod;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.btn-submit:hover {
+  background: white;
+  color: #1e2a38;
+}
+/* Infos de contact avec border */
+.contact-info-box {
+  background: transparent;
+  padding: 40px;
+  width: 400px;
+
+  border: 2px solid darkgoldenrod;
+  border-radius: 20px;
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+.contact-info-box h2 {
+  color: darkgoldenrod;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.contact-info-box p {
+  margin-bottom: 12px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Mise en valeur des infos */
+.contact-info-box p strong {
+  color: darkgoldenrod;
+}
+.contact-info-box p {
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(218, 165, 32, 0.3);
+}
+
+.contact-info-box p:last-child {
+  border-bottom: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-info-box,
+  .contact-form-box {
+    width: 100%;
+  }
+
+  .contact-title {
+    font-size: 28px;
+  }
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+  background: #111;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  font-size: 14px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #Accueil h1 {
+    font-size: 30px;
+  }
+}
