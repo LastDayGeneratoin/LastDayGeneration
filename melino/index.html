@@ -4,12 +4,15 @@
     <meta charset="UTF-8" />
     <title>Portfolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     </head>
     <body>
 
         <!-- ====== Barre de navigation ====== -->
-        <header>
+        <header> 
+
             <nav class="navbar">
                 <a class="logo" href="#">Melino <span> Portfolio</span></a>
                     <ul class="nav-link">
@@ -27,7 +30,17 @@
                         </li>
                     </ul>
             </nav>
+
         </header>
+        
+        <div class="bars-animation">
+            <div class="bar" style="--i:6;"></div>
+            <div class="bar" style="--i:5;"></div>
+            <div class="bar" style="--i:4;"></div>
+            <div class="bar" style="--i:3;"></div>
+            <div class="bar" style="--i:2;"></div>
+            <div class="bar" style="--i:1;"></div>
+        </div>
 
         <!-- ====== Boutton Retour ====== -->
 
@@ -39,8 +52,32 @@
         <section class="hero"> 
             <div class="hero-content">
                 <h1>Bienvenue sur mon <span>Portfolio</span></h1>
+                <h2>je suis un
+                    <span style="--i:4;" data-text="developpeur"> developpeur </span>
+                    <span style="--i:3;" data-text="designer"> designer </span>
+                    <span style="--i:2;" data-text="animateur"> animateur </span>
+                    <span style="--i:1;" data-text="graphiste"> graphiste </span>
+                </h2>
                 <p>Je vais vous accompagner avec expertise, innovation et engagement pour repondre a vos besoins . Decouvrer mes services et construisons ensembles mes reussites.</p>
-                <a href="#services" class="btn">Me contacter</a>
+                <div class="btn-sci">
+                    <a href="#services" class="btn">Me contacter</a>
+                    <div class="sci">
+                        <a href="#"><i class='bx bxl-github'></i></a>
+                        <a href="#"><i class='bx bxl-linkedin' ></i></a>
+                        <a href="#"><i class='bx bxl-youtube' ></i></a>
+                        <a href="#"><i class='bx bxl-twitter' ></i></a>
+                        <a href="#"><i class='bx bxl-facebook' ></i></a>
+                        <a href="#"><i class='bx bxl-instagram' ></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-img">
+                <div class="img-box">
+                    <div class="img-item">
+                        <img src="image/melino-removebg-preview.png" alt="photo de profil">
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -54,9 +91,14 @@
                         <img src="image/melino.jpg" alt="Photo de profil">
 
                         <div class="text">
-                            <h1>Bonjour , je suis  <span>TSIANOY Hubertin Karl Melino</span></h1>
-                                <p>Je suis passionner par le developpement du site web on une version simple et courte car ces mon premier site web, je cree un site web simple , elegants et fonctionnels en utilisant le HTML et CSS . J'aime transformer mes idees en experiences numeriques concretes , visuelles fonctionnelles , en accordant une attention particuliere aux details , a la simplicite et a l'ergonomie</p>
-                                <p>Curieux , motive mais je suis encore en apprentissage continu , mais je m'interesse particulierement au desig web , a l'ergonomie et aux animations interactives</p>
+                            <h1>Bonjour , je suis  
+                                <span style="--i:4;" data-text="TSIANOY">TSIANOY</span> 
+                                <span style="--i:3;" data-text="Hubertin">Hubertin</span>
+                                <span style="--i:2;" data-text="Karl">Karl</span>
+                                <span style="--i:1;" data-text="Melino">Melino</span>
+                            </h1>
+                                <p>Je suis passionner par le developpement du site web on une version simple et courte car ces mon premier site web, je cree un site web simple , elegants et fonctionnels en utilisant le HTML et CSS . J'aime transformer mes idees en experiences numeriques concretes , visuelles fonctionnelles , en accordant une attention particuliere aux details et a la simplicite</p>
+                                <p>Curieux , motive mais je suis encore en apprentissage continu , mais je m'interesse particulierement au desig web et aux animations interactives</p>
                                 <p>Je developpe comstamment mes competences en HTML et CSS , tout en restant a l'ecoute des nouvelles tendances du web</p>
                                 <p>Mon objectif est concevoir des solutions digitales qui repondent aux besoins reels des utilisateurs , tout en offrant une identite visuelle forte</p>
                                 <p>Bref , que ce soit pour un site vitrine , un portofolio ou un projet personnel , je m'investis pleinement afin de livrer un travail soigne , fiable et evolutif</p>
@@ -74,19 +116,19 @@
                 <div class="card-wrapper">
                     <div class="card">
                     <h3>Service 1</h3>
-                    <h4>Creation de site web</h4>
+                    <h4><u>Creation de site web</u></h4>
                     <p>Je veux concevoir des site web moderne et responsive en HTML et CSS, adaptes aux ordinateurs et aux telephones</p>
                     </div>
 
                     <div class="card">
                     <h3>Service 2</h3>
-                    <h4>Design & mise en page</h4>
+                    <h4><u>Design & mise en page</u></h4>
                     <p>Je veux cree des interfaces propres et attractives : couleurs harmonieuses, typographie lisible et mise en page professionnelle pour donnerune bonne image de mon site</p>
                     </div>
 
                     <div class="card">
                     <h3>Service 3</h3>
-                    <h4>Maintenance & amelioration</h4>
+                    <h4><u>Maintenance & amelioration</u></h4>
                     <p>Je veux corriger les erreurs que je fais, ameliorer mes performances et mets a jour mon site afin qu'ils restent rapides, securises et modernes</p>
                     </div>
                 </div>
@@ -104,17 +146,34 @@
                     <div class="contact-container">
 
                         <!-- FORMULAIRE -->
+                        
                         <form class="contact-form">
-                            <input type="text" placeholder="object" required>
-                            <input type="email" placeholder="Email" required>
-                            <textarea placeholder="Message" required></textarea>
-                            <button type="submit">Envoyer</button>
-                        </form>
+
+                            <!-- Subject -->
+                            <div class="input-box">
+                                <input type="text" name="subject" required placeholder=" ">
+                                <label>Object</label>
+                            </div>
+
+                            <!-- Email -->
+                            <div class="input-box">
+                                <input type="email" name="email" required placeholder=" ">
+                                <label>Email</label>
+                            </div>
+
+                            <!-- Message -->
+                            <div class="input-box full">
+                                <textarea name="message" required placeholder=" "></textarea>
+                                <label>Message</label>
+                                <button type="submit" class="btn">Envoyer</button>
+                            </div>
+
+                            </form>
 
                         <!-- INFOS -->
                         <div class="contact-info">
                             <div class="info-box">
-                                <img src="image/icons8-téléphone-50.png" alt="phone">
+                                <i class='bx bxs-phone'></i>
                                 <div>
                                     <h3>phone</h3>
                                     <p> 038 39 656 69</p>
@@ -122,7 +181,7 @@
                             </div>
 
                             <div class="info-box">
-                                <img src="image/icons8-nouveau-message-50.png" alt="email">
+                                <i class='bx bxs-envelope'></i>
                                 <div>
                                     <h3>email</h3>
                                     <p>hubertinkarlmelino@gmail.com</p>
@@ -130,7 +189,7 @@
                             </div>  
                             
                             <div class="info-box">
-                                <img src="image/icons8-marqueur-50.png" alt="localisation">
+                                <i class='bx bxs-map'></i>
                                 <div>
                                     <h3>localisation</h3>
                                     <p>Lot 0202E/0050C Andrainjato-Fianarantsoa</p>
@@ -139,7 +198,7 @@
                         </div>
 
                     </div>
-                
+
             </section>
         </section>
         
