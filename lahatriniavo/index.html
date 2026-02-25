@@ -7,7 +7,6 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-S1
 <style>
 *{
     margin:0;
@@ -17,13 +16,13 @@ S1
 }
 
 html{
-    scroll-behavior:smooth;b
+    scroll-behavior:smooth;
 }
 
 body{
     background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
     color:white;
-}style>
+}
 .btn-retour{
   padding: 10px 20px;
   background-color: #007bff;
@@ -213,6 +212,108 @@ section{
 .social a:hover{
     transform:scale(1.2);
 }
+/* contact */
+/* Background section */
+#contact {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    padding: 40px 20px;
+}
+
+/* Title */
+.section-title {
+    font-size: 40px;
+    color: #fff;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.section-title::after {
+    content: "";
+    width: 60px;
+    height: 4px;
+    background: #fff;
+    display: block;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* Contact Card */
+.contact-box {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    padding: 40px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transition: 0.4s ease;
+}
+
+.contact-box:hover {
+    transform: translateY(-8px);
+}
+
+/* Contact Item */
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 15px 20px;
+    border-radius: 12px;
+    color: #fff;
+    font-size: 16px;
+    transition: 0.3s ease;
+}
+
+.contact-item i {
+    font-size: 20px;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    color: #764ba2;
+    border-radius: 50%;
+    transition: 0.3s ease;
+}
+
+/* Hover effect */
+.contact-item:hover {
+    background: #fff;
+    color: #764ba2;
+    transform: scale(1.05);
+}
+
+.contact-item:hover i {
+    background: #764ba2;
+    color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+    .section-title {
+        font-size: 30px;
+    }
+
+    .contact-box {
+        padding: 25px;
+    }
+
+    .contact-item {
+        font-size: 14px;
+    }
+}
 
 /* FOOTER */
 footer{
@@ -264,15 +365,13 @@ footer{
 <body>
 
 <header>
-   
-    <div class="logo">LAHATRINIAVO</div>
-
-    <nav id="nav">
-        <a href="#home">Accueil</a>
-        <a href="#about">À propos</a>
-        <a href="#notes">Notes</a>
-        <a href="#contact">Contact</a>
-    </nav>
+    <div class="logo">LAHATRINIAVO</div>   
+        <nav id="nav">
+            <a href="#home">Accueil</a>
+            <a href="#about">À propos</a>
+            <a href="#notes">Notes</a>
+            <a href="#contact">Contact</a>
+        </nav>
     
     <div class="menu-btn" onclick="toggleMenu()">
         <span></span>
@@ -281,12 +380,11 @@ footer{
     </div>
 </header>
 
-<.......boton retour.....></.......boton>
-<a href="index.html" class="btn-retour">
-   <i class="fa-solid fa-arrow-left"></i> Retour
-</a>
-  <button>Retour</button>
-</a>
+<!-- <.......boton retour.....></.......boton> -->
+    <a href="../index.html" class="btn-retour">
+        <i class="fa-solid fa-arrow-left"></i> Retour
+    </a>
+
     
 </div>
 
