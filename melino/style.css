@@ -1,3 +1,20 @@
+/* @import url("https://fonts.googleapis.com/css2family=Poppins:wght@300;400;500;600;700;800;900&display=swap"); */
+@font-face {
+  font-family: "poppins";
+  src: url("fonts/poppins/Poppins-Bold.ttf");
+}
+@font-face {
+  font-family: "poppins";
+  src: url("fonts/poppins/Poppins-Medium.ttf");
+}
+@font-face {
+  font-family: "poppins";
+  src: url("fonts/poppins/Poppins-Regular.ttf");
+}
+* {
+  font-family: "poppins", "sans-serif";
+}
+
 :root {
   --primary: #04aa6d;
   --dark: #717cb7;
@@ -12,6 +29,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "poppins";
 }
 
 /* Style general */
@@ -28,30 +46,87 @@ body {
 /* Section principal (Hero) */
 .hero {
   height: 100vh; /* Plein écran */
-
   display: flex;
   align-items: center; /* centre verticalement */
+  gap: 50px;
+  height: 100vh;
+  padding: 60px 9% 0;
   justify-content: center; /* centre horizontalement */
   text-align: center;
   color: white;
+  visibility: hidden;
+  opacity: 0;
+  animation: show-content 1.5s linear forwards;
+  animation-delay: 1.9s;
 }
 
 .hero-content h1 {
   color: var(--light);
-  font-size: 3rem;
+  font-size: 55px;
   margin-bottom: 10px;
 }
 .hero-content h1 span {
   color: var(--primary);
+}
+.hero-content h2 {
+  display: inline-block;
+  font-size: 32px;
+  margin-top: -10px;
+}
+
+.hero-content h2 span {
+  position: relative;
+  display: inline-block;
+  color: transparent;
+  -webkit-text-stroke: 0.7px var(--primary);
+  animation: display-text 16s linear infinite;
+  animation-delay: calc(-4s * var(--i));
+}
+
+@keyframes display-text {
+  25%,
+  100% {
+    display: none;
+  }
+}
+
+.hero-content h2 span::before {
+  content: attr(data-text);
+  position: absolute;
+  width: 0%;
+  border-right: 2px solid var(--primary);
+  color: var(--primary);
+  white-space: nowrap;
+  overflow: hidden;
+  animation: fill-text 4s linear infinite;
+}
+
+@keyframes fill-text {
+  10%,
+  100% {
+    width: 0;
+  }
+
+  70%,
+  90% {
+    width: 100%;
+  }
 }
 
 .hero-content p {
   color: var(--light);
   font-size: 2rem;
   margin-bottom: 10px;
+  margin: 15px 0 25px;
 }
 
 /* Bouton principal */
+.hero-content .btn-sci {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
 .btn {
   display: inline-block;
   padding: 12px 25px;
@@ -65,6 +140,109 @@ body {
 .btn:hover {
   background-color: var(--primary);
   transform: scale(1.05);
+}
+
+.hero-content .btn-sci .sci {
+  margin-left: 20px;
+}
+
+.hero-content .btn-sci .sci a {
+  display: inline-flex;
+  padding: 8px;
+  border: 2px solid var(--primary);
+  border-radius: 50%;
+  color: var(--primary);
+  font-size: 20px;
+  margin: 0 8px;
+  transition: 0.5s;
+}
+
+.hero-content .btn-sci .sci a:hover {
+  background-color: var(--primary);
+  color: white;
+}
+
+.hero-img .img-box {
+  position: relative;
+  width: 38vw;
+  height: 38vw;
+  border-radius: 50%;
+  padding: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero-img .img-box::before,
+.hero-img .img-box::after {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: conic-gradient(
+    transparent,
+    transparent,
+    transparent,
+    var(--primary)
+  );
+  transform: rotate(0deg);
+  animation: rotate-border 10s linear infinite;
+}
+
+.hero-img .img-box::after {
+  animation-delay: -5s;
+}
+
+@keyframes rotate-border {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.hero-img .img-box .img-item {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #1f242d;
+  border-radius: 100%;
+  border: 5px solid #1f242d;
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.hero-img .img-box .img-item img {
+  position: absolute;
+  display: block;
+  width: 85%;
+  object-fit: cover;
+  mix-blend-mode: lighten;
+}
+
+/* ====== Animation ====== */
+.bars-animation {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  z-index: -1;
+}
+
+.bars-animation .bar {
+  width: 100%;
+  height: 100%;
+  background: #1f242d;
+  transform: translateY(-100%);
+  animation: show-bars 0.5s ease-in-out forwards;
+  animation-delay: calc(0.1s * var(--i));
+}
+
+@keyframes show-bars {
+  100% {
+    transform: translateY(0%);
+  }
 }
 
 /* Section service */
@@ -89,6 +267,7 @@ body {
   color: var(--primary);
 }
 .service p {
+  font-size: 20px;
   color: var(--light);
   margin-bottom: 30px;
 }
@@ -101,15 +280,24 @@ body {
 }
 
 .service .card-wrapper .card {
-  border-radius: 15px;
-  background: var(--primary);
-  padding: 3rem 2rem;
+  height: 250px;
+  border-radius: 20px;
+  background-color: transparent;
+  padding: 3% 8%;
+  border: 0.2px solid rgba(114, 226, 174, 0.2);
   padding-top: 0.5rem;
   text-align: center;
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
 }
+
 .service .card-wrapper .card:hover {
   cursor: pointer;
   transform: translateY(-10px);
@@ -118,7 +306,7 @@ body {
 
 section.service .card-wrapper .card h3 {
   font-weight: 800;
-  font-size: 1.2rem;
+  font-size: 30px;
   margin-bottom: 0.5rem;
   color: white;
 }
@@ -133,18 +321,23 @@ section.service .card-wrapper .card h3 {
 }
 
 section.service .card-wrapper .card h4 {
+  font-size: 20px;
   margin-bottom: 1rem;
+  color: white;
   font-weight: 600;
   letter-spacing: 0.5px;
 }
 
 section.service .card-wrapper .card p {
-  font-size: 0.95rem;
+  font-size: 20px;
   line-height: 1.7;
 }
 
 section.service .card-wrapper .card:hover {
-  background: var(--primary);
+  font-size: 20px;
+  background-color: transparent;
+  transform: translateY(-30px);
+  border-color: var(--primary);
 }
 
 section.service .card-wrapper .card:hover h3,
@@ -158,7 +351,7 @@ section.service .card-wrapper .card:hover p {
 }
 
 .container {
-  max-width: 1000px;
+  width: 60%;
   margin: auto;
 }
 
@@ -184,8 +377,8 @@ section.service .card-wrapper .card:hover p {
 }
 
 .content img {
-  width: 90%;
-  border-radius: 10px;
+  width: 100%;
+  border-radius: 20px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0, 1);
 }
 
@@ -197,12 +390,48 @@ section.service .card-wrapper .card:hover p {
 .text h1 {
   margin-bottom: 15px;
 }
+
 .text h1 span {
-  font-size: 30px;
+  position: relative;
+  display: inline-block;
+  color: transparent;
+  -webkit-text-stroke: 0.7px var(--primary);
+  animation: display-text 16s linear infinite;
+  animation-delay: calc(-4s * var(--i));
+}
+
+@keyframes display-text {
+  25%,
+  100% {
+    display: none;
+  }
+}
+
+.text h1 span::before {
+  content: attr(data-text);
+  position: absolute;
+  width: 0;
+  border-right: 2px solid var(--primary);
   color: var(--primary);
+  white-space: nowrap;
+  overflow: hidden;
+  animation: fill-text 4s linear infinite;
+}
+
+@keyframes fill-text {
+  10%,
+  100% {
+    width: 0;
+  }
+
+  70%,
+  90% {
+    width: 100%;
+  }
 }
 
 .text p {
+  font-size: 20px;
   margin-bottom: 20px;
   line-height: 1.5;
 }
@@ -218,7 +447,9 @@ section.service .card-wrapper .card:hover p {
 }
 
 .btn:hover {
-  background-color: var(--primary);
+  background-color: transparent;
+  color: var(--primary);
+  box-shadow: 0 0 15px var(--primary);
 }
 
 /*Section contact*/
@@ -247,43 +478,90 @@ section.service .card-wrapper .card:hover p {
 /* FORMULAIRE */
 .contact-form {
   flex: 1;
-  border: 1px solid var(--primary);
-  border-radius: 15px;
-  padding: 30px;
+  border: 2px solid var(--primary);
+  border-radius: 20px;
+  padding: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
+/* Boîte des champs */
+.input-box {
+  position: relative;
+  flex: 1;
+  min-width: 48%;
+}
+
+.input-box.full {
+  width: 100%;
+}
+
+/* Inputs & textarea */
 .contact-form input,
 .contact-form textarea {
   width: 100%;
   background: transparent;
   border: none;
-  border-bottom: 1px solid var(--primary);
+  border-bottom: 2px solid gray;
   color: white;
-  padding: 10px 0;
-  margin-bottom: 25px;
+  padding: 10px 5px;
+  font-size: 16px;
   outline: none;
-}
-
-.contact-form textarea {
-  height: 38px;
   resize: none;
 }
 
-.contact-form button {
-  background: white;
-  border: none;
-  padding: 12px 30px;
-  border-radius: 10px;
-  cursor: pointer;
-  width: 100%;
-  font-weight: bold;
-  color: white;
-  box-shadow: 0 0 15px var(--primary);
-  background-color: var(--primary);
+/* Hauteur textarea */
+.contact-form textarea {
+  height: 120px;
+  padding-top: 20px;
 }
 
-button:hover {
+/* LABEL (floating effect) */
+.input-box label {
+  position: absolute;
+  left: 5px;
+  top: 12px;
+  color: gray;
+  font-size: 14px;
+  transition: 0.3s ease;
+  pointer-events: none;
+}
+
+/* Animation du label */
+.input-box input:focus + label,
+.input-box input:valid + label,
+.input-box textarea:focus + label,
+.input-box textarea:valid + label {
+  top: -10px;
+  font-size: 12px;
+  color: var(--primary);
+}
+
+/* Effet focus bordure */
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-bottom: 2px solid var(--primary);
+}
+
+/* Bouton */
+.contact-form button {
+  width: 100%;
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-weight: bold;
+  cursor: pointer;
+  border: 2px solid var(--primary);
   background-color: var(--primary);
+  color: #1f242d;
+  transition: 0.3s ease;
+}
+
+/* Hover bouton */
+.contact-form button:hover {
+  background-color: transparent;
+  color: var(--primary);
+  box-shadow: 0 0 15px var(--primary);
 }
 
 /* INFOS */
@@ -310,12 +588,19 @@ button:hover {
   gap: 15px;
 }
 
-.info-box img {
+.info-box i {
   padding: 5px;
   border: 2px solid var(--primary);
   border-radius: 50%;
   width: 50px;
   height: 50px;
+}
+.info-box .bx {
+  font-size: 39px;
+  color: var(--primary);
+  padding: 5px;
+  border: 2px solid var(--primary);
+  border-radius: 50%;
 }
 
 .info-box h3 {
@@ -330,7 +615,6 @@ button:hover {
 }
 
 /* barre de navigation */
-
 .navbar {
   position: fixed;
   padding: 20px 100px;
@@ -338,7 +622,19 @@ button:hover {
   backdrop-filter: blur(6px);
   z-index: 1000;
   width: 100%;
+  visibility: hidden;
+  opacity: 0;
+  animation: show-content 1.5s linear forwards;
+  animation-delay: 1.2s;
 }
+
+@keyframes show-content {
+  100% {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
 .navbar .logo {
   text-decoration: none;
   font-size: 20px;
@@ -356,7 +652,6 @@ button:hover {
 
 .navbar ul li a {
   text-decoration: none;
-
   color: white;
   padding: 10px 20px;
   border: 1px solid transparent;
@@ -379,12 +674,18 @@ button:hover {
 /*Boutton Retour*/
 #retour {
   position: absolute;
-  margin-top: 70px;
-}
+  top: 90px;
+  left: 20px;
+  z-index: 2000;
 
+  visibility: hidden;
+  opacity: 0;
+  animation: show-content 1.5s linear forwards;
+  animation-delay: 2.2s; /* plus grand que la navbar et hero */
+}
 .btn-retour {
   display: block;
-
+  font-size: 20px;
   margin: 30px 10px;
   padding: 10px 20px;
   background: var(--primary);
