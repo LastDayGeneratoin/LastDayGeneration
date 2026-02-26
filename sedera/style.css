@@ -1,0 +1,86 @@
+ body {
+  /* @ fond  */ 
+  /* hatsarana  */ 
+  background-image: url(couv.jpg);
+  background-repeat: no-repeat;
+  background-position: center ;
+  background-attachment: fixed;
+  background-size: cover;
+  padding-top: 100px; /* espace navbar fixed */
+  margin:  0;
+
+}
+
+header {
+  background: gray;
+  color:rgba(255, 255, 255, 0.372);
+  text-align: center;
+  padding: 30px;
+}
+
+nav {
+  background: gray;
+  text-align: center;
+  padding: 10px;
+}
+
+nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #ffeb3b;
+}
+
+section {
+  background: transparent;
+  margin: 20px auto;
+  padding: 20px;
+  width: 80%;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h2 {
+  color:black;
+}
+
+ul {
+  list-style: square;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+table, th, td {
+  border: 1px solid #ccc;
+}
+
+th {
+  background: #6a1b9a;
+  color: white;
+}
+
+th, td {
+  padding: 10px;
+  text-align: center;
+}
+
+footer {
+  background:transparent;
+  color:black;
+  text-align: center;
+  padding: 15px;
+  margin-top: 30px;
+}
+img{
+  width: 150px;
+  float: right;
+  height:130px;
+}
