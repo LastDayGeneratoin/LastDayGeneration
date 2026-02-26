@@ -1,6 +1,6 @@
  body {
-  /* @ fond  */
-  /* hatsarana  */
+  /* @ fond  */ 
+  /* hatsarana  */ 
   background-image: url(couv.jpg);
   background-repeat: no-repeat;
   background-position: center ;
@@ -45,7 +45,7 @@ section {
 }
 
 h2 {
-  color: #6a1b9a;
+  color:black;
 }
 
 ul {
@@ -73,8 +73,8 @@ th, td {
 }
 
 footer {
-  background: gray;
-  color: white;
+  background:transparent;
+  color:black;
   text-align: center;
   padding: 15px;
   margin-top: 30px;
